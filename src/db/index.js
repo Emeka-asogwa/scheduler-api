@@ -1,9 +1,8 @@
 const pg = require("pg");
-
 const client = new pg.Client({
   user: 'testdd',
   host: 'localhost',
-  database: 'scheduler_development',
+  database: `scheduler_${process.env.NODE_ENV || "development"}`,
   password: 'testdd',
   port: 5432,
 });
